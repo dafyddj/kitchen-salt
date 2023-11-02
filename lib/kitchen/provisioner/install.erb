@@ -31,6 +31,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 if [ -z "${SALT_VERSION}" -a "#{salt_install}" = "bootstrap" ]
 then
+  echo "Path: ${PATH}"
   mkdir -p "#{config[:root_path]}"
   BOOTSTRAP="#{config[:root_path]}/bootstrap.sh"
   if ! test -f $BOOTSTRAP; then
